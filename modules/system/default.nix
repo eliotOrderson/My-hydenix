@@ -9,9 +9,10 @@
     # pkgs.vscode - hydenix's vscode version
     # pkgs.userPkgs.vscode - your personal nixpkgs version
     pkgs.clash-verge-rev
+    pkgs.librime-lua
+    pkgs.librime-octagram
   ];
-
-
+  
 
 services.flatpak.enable = true;
 systemd.services.clash-verge-service = {
