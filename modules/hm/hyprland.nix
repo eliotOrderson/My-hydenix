@@ -29,7 +29,7 @@
 
     bind = $mainMod, Return, exec, kitty # launch terminal emulator
     bind = $mainMod, D, exec, pkill -x rofi || rofilaunch.sh d # launch application launcher
-    bind = $mainMod, C, exec, $scrPath/windowoperation.sh -c google-chrome -e $browser -w 8 -m "goto" # launch web browser
+    bind = $mainMod, C, exec, windows-control -c google-chrome -e $browser -w 8 -m "goto" # launch web browser
     bind = $mainMod, F, fullscreen
 
 
@@ -46,14 +46,14 @@
     bind = $mainMod, j, movefocus, d
 
     # mainMod + \ open float kitty terminal on center
-    bind = $mainMod,code:51,exec,[centerwindow 1] $scrPath/windowoperation.sh -c 'floatkitty' -e "kitty --class floatkitty" -w 66
-    bind = ALT,code:51,exec,[centerwindow 1] $scrPath/windowoperation.sh -c 'floatkitty' -e "kitty --class floatkitty" -w 66 
+    bind = $mainMod,code:51,exec,[centerwindow 1] windows-control -c 'floatkitty' -e "kitty --class floatkitty" -w 66
+    bind = ALT,code:51,exec,[centerwindow 1] windows-control -c 'floatkitty' -e "kitty --class floatkitty" -w 66 
 
     # hide window
-    bind = $mainMod ctrl,h,exec,$scrPath/windowoperation.sh h 
+    bind = $mainMod ctrl,h,exec,windows-control h 
 
     # show hide window
-    bind = $mainMod ctrl,i,exec,$scrPath/windowoperation.sh s 
+    bind = $mainMod ctrl,i,exec,windows-control s 
 
   '';
 

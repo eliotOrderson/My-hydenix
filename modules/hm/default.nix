@@ -9,6 +9,8 @@
     ./hyprland.nix
     ./theme.nix
     ./zsh.nix
+    ./services.nix
+    ./script.nix
   ];
 
   # home-manager options go here
