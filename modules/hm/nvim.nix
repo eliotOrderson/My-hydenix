@@ -1,5 +1,7 @@
-{ pkgs, ... }:
-
+{ config, pkgs, ... }:
+let
+  flakeDir = "${config.home.homeDirectory}/hydenix";
+in
 {
   hydenix.hm.editors = {
     enable = true;
@@ -34,5 +36,9 @@
       ripgrep
       fd
     ];
+
   };
+
+  xdg.configFile."nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${flakeDir}/modules/hm/config/nvim";
 }

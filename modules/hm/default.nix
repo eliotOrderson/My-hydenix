@@ -6,11 +6,15 @@
     ./nvim.nix
     ./input-method.nix
     ./services.nix
+    ./hyprland.nix
+    ./theme.nix
+    ./zsh.nix
   ];
 
   # home-manager options go here
   home.packages = with pkgs; [
     google-chrome
+    yazi
   ];
 
   # hydenix home-manager options go here
