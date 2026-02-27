@@ -12,6 +12,11 @@
       rm -f -- "$tmp"
     }
 
+    alias tar-zstd="tar -I 'zstd -T0' -cvf"
+    alias untar-zstd="tar -I 'zstd -T0' -vxf"
+    alias encrypt="age -e -p"
+    alias decrypt="age -d"
+
     # ==========================================================================
     # 1. 历史记录管理 (History Settings)
     # ==========================================================================

@@ -6,22 +6,26 @@
       # url = "github:nixos/nixpkgs/nixos-unstable"; # uncomment this if you know what you're doing
       follows = "hydenix/nixpkgs"; # then comment this
     };
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     hydenix.url = "github:richen604/hydenix";
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
-    { self,nixpkgs,nixpkgs-unstable,... }@inputs:
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      ...
+    }@inputs:
     let
       hydenixConfig = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
-	  pkgs-unstable = import nixpkgs-unstable {
-        	system = "x86_64-linux";
-		config.allowUnfree = true;
-	  };
+          pkgs-unstable = import nixpkgs-unstable {
+            config.allowUnfree = true;
+          };
         };
         modules = [
           ./configuration.nix

@@ -17,6 +17,8 @@
   home.packages = with pkgs; [
     google-chrome
     yazi
+    trash-cli
+    devenv
   ];
 
   # hydenix home-manager options go here
