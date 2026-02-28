@@ -12,6 +12,7 @@
     ./services.nix
     ./script.nix
     ./xdg.nix
+    ./path.nix # manage config file hard link
   ];
 
   # home-manager options go here

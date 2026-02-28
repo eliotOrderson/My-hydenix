@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  flakeDir = "${config.home.homeDirectory}/hydenix";
+  flakeConfigDir = "${config.home.homeDirectory}/hydenix/modules/hm/config";
 in
 {
   hydenix.hm.editors = {
@@ -39,6 +39,5 @@ in
 
   };
 
-  xdg.configFile."nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "${flakeDir}/modules/hm/config/nvim";
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${flakeConfigDir}/nvim";
 }
