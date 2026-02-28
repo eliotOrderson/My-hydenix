@@ -3,6 +3,7 @@
   imports = [
     ./openrgb-gigabyteb850m.nix
     ./services.nix
+    ./sops.nix
   ];
 
   hydenix.hardware.openrgb.GigbyteB850.enable = false;
@@ -11,6 +12,7 @@
     pkgs.clash-verge-rev
     pkgs.librime-lua
     pkgs.librime-octagram
+    pkgs.sops
   ];
 
 }
