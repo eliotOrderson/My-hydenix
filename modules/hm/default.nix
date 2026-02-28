@@ -11,6 +11,7 @@
     ./zsh.nix
     ./services.nix
     ./script.nix
+    ./xdg.nix
   ];
 
   # home-manager options go here
