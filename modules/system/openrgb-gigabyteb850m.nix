@@ -6,16 +6,15 @@
 }:
 
 let
-  # 这里我们把它放在 hydenix.hardware.openrgb.GigbyteB850 下
   cfg = config.hydenix.hardware.openrgb.GigbyteB850;
 in
 {
-  # 1. 定义开关选项
+  # 1. 定义深层嵌套的选项
   options.hydenix.hardware.openrgb.GigbyteB850 = {
     enable = lib.mkEnableOption "OpenRGB for Gigabyte B850M";
   };
 
-  # 2. 只有当开关为 true 时，才应用以下配置
+  # 2. 只有当开启该特定主板的选项时，才应用配置
   config = lib.mkIf cfg.enable {
     boot.kernelModules = [
       "i2c-dev"
