@@ -3,7 +3,7 @@
   pkgs,
   ...
 }:
-  # FOLLOW THE BELOW INSTRUCTIONS LINE BY LINE TO SET UP YOUR SYSTEM
+# FOLLOW THE BELOW INSTRUCTIONS LINE BY LINE TO SET UP YOUR SYSTEM
 {
   imports = [
     # hydenix inputs - Required modules, don't modify unless you know what you're doing
@@ -16,34 +16,34 @@
     # Run `lshw -short` or `lspci` to identify your hardware
 
     # GPU Configuration (choose one):
-     inputs.nixos-hardware.nixosModules.common-gpu-nvidia # NVIDIA
+    inputs.nixos-hardware.nixosModules.common-gpu-nvidia # NVIDIA
     # inputs.nixos-hardware.nixosModules.common-gpu-amd # AMD
 
     # CPU Configuration (choose one):
-     inputs.nixos-hardware.nixosModules.common-cpu-amd # AMD CPUs
+    inputs.nixos-hardware.nixosModules.common-cpu-amd # AMD CPUs
     # inputs.nixos-hardware.nixosModules.common-cpu-intel # Intel CPUs
 
     # Additional Hardware Modules - Uncomment based on your system type:
     # inputs.nixos-hardware.nixosModules.common-hidpi # High-DPI displays
     # inputs.nixos-hardware.nixosModules.common-pc-laptop # Laptops
-     inputs.nixos-hardware.nixosModules.common-pc-ssd # SSD storage
+    inputs.nixos-hardware.nixosModules.common-pc-ssd # SSD storage
   ];
 
   # If enabling NVIDIA, you will be prompted to configure hardware.nvidia
-   hardware.nvidia = {
-     open = false; # For newer cards, you may want open drivers
-     prime.sync.enable = false;
-     prime.offload.enable = false;
-     
-     nvidiaSettings = true;
-     modesetting.enable = true;
-  #   prime = { # For hybrid graphics (laptops), configure PRIME:
-  #     amdBusId = "PCI:0:2:0"; # Run `lspci | grep VGA` to get correct bus IDs
-  #     intelBusId = "PCI:0:2:0"; # if you have intel graphics
-  #     nvidiaBusId = "PCI:1:0:0";
-  #     offload.enable = false; # Or disable PRIME offloading if you don't care
-  #   };
-   };
+  hardware.nvidia = {
+    open = false; # For newer cards, you may want open drivers
+    prime.sync.enable = false;
+    prime.offload.enable = false;
+
+    nvidiaSettings = true;
+    modesetting.enable = true;
+    #   prime = { # For hybrid graphics (laptops), configure PRIME:
+    #     amdBusId = "PCI:0:2:0"; # Run `lspci | grep VGA` to get correct bus IDs
+    #     intelBusId = "PCI:0:2:0"; # if you have intel graphics
+    #     nvidiaBusId = "PCI:1:0:0";
+    #     offload.enable = false; # Or disable PRIME offloading if you don't care
+    #   };
+  };
 
   # Home Manager Configuration - manages user-specific configurations (dotfiles, themes, etc.)
   home-manager = {
@@ -84,26 +84,23 @@
     # For more configuration options, see: ./docs/options.md
   };
 
-
-  #networking.nameservers = [ "198.18.0.1" ]; 
+  #networking.nameservers = [ "198.18.0.1" ];
   #networking.dhcpcd.extraConfig = "nohook resolv.conf";
   #networking.networkmanager.dns = "none";
 
   nix.settings.auto-optimise-store = true;
   boot.loader.systemd-boot.configurationLimit = 10;
   nix.gc = {
-  automatic = true;
-  dates = "weekly";
-  options = "--delete-older-than 5d"; 
-};
-  
-  nix.settings.substituters = [ 
-  "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
-  "https://cache.nixos.org"
-  ];
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 5d";
+  };
 
+  nix.settings.substituters = [
+    "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+    "https://cache.nixos.org"
+  ];
 
   # System Version - Don't change unless you know what you're doing (helps with system upgrades and compatibility)
   system.stateVersion = "25.05";
 }
-

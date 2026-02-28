@@ -2,11 +2,11 @@
 {
   services.flatpak.enable = true;
 
-  services.displayManager.defaultSession = "hyprland-uwsm";
   services.displayManager.autoLogin = {
     enable = true;
     user = "hydenix";
   };
+  services.displayManager.defaultSession = "hyprland-uwsm";
 
   systemd.services.clash-verge-service = {
     description = "Auto start service ...";
