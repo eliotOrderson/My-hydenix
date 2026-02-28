@@ -4,6 +4,7 @@
     ./openrgb-gigabyteb850m.nix
     ./services.nix
     ./sops.nix
+    ./nix-ld.nix
   ];
 
   hydenix.hardware.openrgb.GigbyteB850.enable = false;

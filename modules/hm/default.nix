@@ -19,7 +19,7 @@
     google-chrome
     yazi
     trash-cli
-    devenv
+    uv
   ];
 
   # hydenix home-manager options go here
