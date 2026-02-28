@@ -29,8 +29,6 @@ in
       unzip
       wget
       curl
-      nodejs
-      cargo
 
       # 搜索与过滤 (LazyVim 强依赖)
       ripgrep

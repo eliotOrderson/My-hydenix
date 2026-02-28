@@ -21,6 +21,8 @@
     yazi
     trash-cli
     uv
+    nodejs
+    cargo
   ];
 
   # hydenix home-manager options go here
