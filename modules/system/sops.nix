@@ -8,6 +8,7 @@
     secrets = {
       github_private_key = {
         path = "${config.users.users.hydenix.home}/.ssh/id_ed25519";
+        owner = "hydenix";
         mode = "0600";
       };
     };
