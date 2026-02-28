@@ -21,6 +21,7 @@
     yazi
     trash-cli
     uv
+    bun
     nodejs
     cargo
   ];
