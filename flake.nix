@@ -27,13 +27,20 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
-          pkgs-unstable = import nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
         };
         modules = [
           ./configuration.nix
+          #  using pkg.unsatable on home manger or system
+          {
+            nixpkgs.overlays = [
+              (final: prev: {
+                unstable = import nixpkgs-unstable {
+                  system = prev.system;
+                  config.allowUnfree = true;
+                };
+              })
+            ];
+          }
         ];
       };
       vmConfig = inputs.hydenix.lib.vmConfig {

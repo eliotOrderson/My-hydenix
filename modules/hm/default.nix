@@ -16,14 +16,15 @@
   ];
 
   # home-manager options go here
-  home.packages = with pkgs; [
-    google-chrome
-    yazi
-    trash-cli
-    uv
-    bun
-    nodejs
-    cargo
+  home.packages = [
+    pkgs.google-chrome
+    pkgs.yazi
+    pkgs.trash-cli
+    pkgs.uv
+    pkgs.bun
+    pkgs.nodejs
+    pkgs.cargo
+    pkgs.unstable.claude-code-router
   ];
 
   # hydenix home-manager options go here

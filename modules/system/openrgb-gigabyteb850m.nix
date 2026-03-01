@@ -1,7 +1,7 @@
 {
   config,
+  pkgs,
   lib,
-  pkgs-unstable,
   ...
 }:
 
@@ -29,7 +29,7 @@ in
 
     services.hardware.openrgb = {
       enable = true;
-      package = pkgs-unstable.openrgb-with-all-plugins;
+      package = pkgs.unstable.openrgb-with-all-plugins;
     };
   };
 }
