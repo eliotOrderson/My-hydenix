@@ -23,8 +23,14 @@
     pkgs.uv
     pkgs.bun
     pkgs.nodejs
-    pkgs.cargo
     pkgs.unstable.claude-code-router
+
+    # rust dev tools
+    # pkgs.cargo
+    pkgs.rustup
+    pkgs.clang
+    pkgs.mold
+    pkgs.sccache
   ];
 
   # hydenix home-manager options go here

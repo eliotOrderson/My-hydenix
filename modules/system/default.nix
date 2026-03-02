@@ -5,6 +5,7 @@
     ./services.nix
     ./sops.nix
     ./nix-ld.nix
+    ./docker.nix
   ];
 
   hydenix.hardware.openrgb.GigbyteB850.enable = false;
@@ -14,6 +15,7 @@
     pkgs.librime-lua
     pkgs.librime-octagram
     pkgs.sops
+    pkgs.docker-compose
   ];
 
 }
