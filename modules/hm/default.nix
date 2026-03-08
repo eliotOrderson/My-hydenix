@@ -24,6 +24,7 @@
     pkgs.bun
     pkgs.nodejs
     pkgs.unstable.claude-code-router
+    pkgs.zoxide
 
     # rust dev tools
     # pkgs.cargo
